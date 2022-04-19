@@ -1,0 +1,44 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    background-color: rgb(0, 0, 0);
+}
+.breadcrumb {
+    display: flex;
+    
+    justify-content: flex-end;
+}
+.imgHero {
+   display: flex;
+   justify-content: center;
+   align-content: center;
+   opacity: 0.8;
+}
+.h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: aliceblue;
+
+}
+.EmailForm {
+    display: flex;
+    justify-content:center;
+    align-content: center;
+   
+}
+.bottomFormEnviar {
+    display: flex;
+    justify-content:flex-end;
+    align-content: center;
+
+}
+
+.bottomFormBorrart {
+display: flex;
+justify-content: flex-start;
+align-content: center;
+}
