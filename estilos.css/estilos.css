@@ -1,3 +1,5 @@
+/*Css general */
+
 * {
    box-sizing: border-box;
 }
@@ -5,6 +7,8 @@ body{
     padding: 1rem;
     background-color: #000000;
 }
+
+/*Css home*/
 
 .mainGrid {
     display: grid;
@@ -39,26 +43,6 @@ body{
     font-family: sans-serif;
 
 }
-.EmailForm {
-    display: flex;
-    justify-content:center;
-    align-content: center;
-   
-}
-.bottomFormEnviar {
-    display: flex;
-    justify-content:flex-end;
-    align-content: center;
-
-}
-
-.bottomFormBorrart {
-display: flex;
-justify-content: flex-start;
-align-content: center;
-}
-
-
 
 
 .contenedorHero {
@@ -89,3 +73,58 @@ align-content: center;
 .botonHero {
     width:20%;
 }
+
+.servicios {
+    color: white;
+    font-family: sans-serif;
+}
+
+
+
+/*Css form*/
+
+.EmailForm {
+    display: flex;
+    justify-content:center;
+    align-content: center;
+   
+}
+.bottomFormEnviar {
+    display: flex;
+    justify-content:flex-end;
+    align-content: center;
+
+}
+
+.bottomFormBorrart {
+display: flex;
+justify-content: flex-start;
+align-content: center;
+}
+
+/*Css formPresupuesto*/
+
+.boton1Presupuesto {
+    display: flex;
+    justify-content: flex-end;
+}
+.boton2Presupuesto {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.checkbox {
+    display: flex;
+    justify-content: center;
+}
+
+.selectFecha {
+    display: flex;
+    justify-content: center;
+}
+.selectService {
+    display: flex;
+    justify-content: center;
+
+}
+

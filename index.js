@@ -15,8 +15,7 @@
       //  nombre = prompt("ingrese su nombre para continuar: ");
    // }
 
-    
-let nombre = prompt("ingrese su Nombre: ");
+/*let nombre = prompt("ingrese su Nombre: ");
 
     
  while (nombre == "" || nombre == null) {
