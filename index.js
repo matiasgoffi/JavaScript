@@ -1,49 +1,94 @@
-//function  FormularioDeContacto() {
+let nombre = 0;
+let apellido = 0;
+let ciudad = 0;
+let provincia = 0;
+let zip = 0;
+let email = 0;
+let respuesta = 0; 
+let preciodelservicio = 0;
+
+
+
+
+
+function servicioContratado() {
+    servicio = prompt("seleccioná la opcion deseada: a-(eventos) / b-(sesionindividual)");
+
+    if (servicio == "a") {
+        servicio = 10000;
+    }
+    else if (servicio == "b") {
+        servicio = 5000;
+    } 
+
+    dia = prompt ("seleccioná el dia: a-(lunes) / b-(martes) / c-(miercoles) / d-(jueves)/ e-(viernes) / f-(sabado) / g-(domingo)");
     
+    if (dia =="a" || dia == "b" || dia == "c" || dia == "d") {
+        dia = 1;
+    }
+    else if (dia == "e" || dia == "f" || dia == "g") {
+        dia = 2;
+
+    }
+    if ( dia !="a" || dia !="b" || dia !="c" || dia !="e" || dia !="f" || dia !="g") {
+        dia = prompt ("seleccione entre (a-b-c-d-e-f- o g) para seguir: a-(lunes) / b-(martes) / c-(miercoles) / d-(jueves)/ e-(viernes) / f-(sabado) / g-(domingo)");
+    }
+    preciodelservicio = servicio * dia;
+
+}
 
 
-
-//let ciudad = prompt ("Ingrese su Ciudad de localización: ");
-//let provincia = prompt ("Estado o Provincia al que pertenece: ");
-//let consulta = prompt ("deje su consulta: ");
-//let email = prompt ("ingrese su Email: ");
-//while (nombre !="ESC" || nombre != "" || nombre != null) {
-
-    //let nombre = prompt("ingrese su Nombre: ");
-
-   // while (nombre == "" || nombre == null) {
-      //  nombre = prompt("ingrese su nombre para continuar: ");
-   // }
-
-/*let nombre = prompt("ingrese su Nombre: ");
-
-    
- while (nombre == "" || nombre == null) {
+function datosPersona() {
+            
+       nombre = prompt("ingrese su Nombre: ");
+        
+       while (nombre == "" || nombre == null){
         nombre = prompt("ingrese su nombre para continuar: ");
-     if (nombre == "" || nombre == null){
-            nombre = prompt("Ups! necesitamos un nombre para seguir: ");
-        }
-         if (nombre == "" || nombre == null) {
-                nombre = prompt("¿Segurx desea llenar el formulario?");
-            }
-       if (nombre == "" || nombre == null) {
-            nombre = prompt("última chance, ingrese su nombre: ");
-        }
-        if (nombre == "" || nombre == null) {
-            break;
-        }
+       }
        
-    }
+        
+        apellido = prompt("ingrese su apellido: ");
+        ciudad = prompt ("Ingrese su Ciudad de localización: ");
+        provincia = prompt ("Estado o Provincia al que pertenece: ");
+        
+        
+        zip = prompt("ingrese su código postal: ");
+        
+        while (zip == "" ||  isNaN(zip) || zip == null){
+        zip = prompt("ingrese su código postal: ");
+        }
+        
+      email = prompt ("ingrese su correo electrónico: "); 
+
+        while (email == "" || email == null) {
+        email = prompt("ingrese su email para continuar: ");
+        }
+
+       }
+
+       function mostrar(){
+
+       respuesta = alert("bienvenidx " + " " + nombre + " " + apellido + " " + "el presupuesto solicitado es de: $" + preciodelservicio + ",enviamos su consulta al email ingresado");
+
+       }
     
+   
+datosPersona();      
+servicioContratado();  
+mostrar();
 
-    /*while (nombre !="" || nombre != null) {
- let apellido = prompt("ingrese su apellido: ");
-    if  (apellido == "" || apellido == null) {
-    apellido = prompt("ingrese su apellido para continuar: ");
-    }
-    else { break;}
+   
 
-    }
+     
+      
+
+
+
+
+
+
+
+
 
      
          
@@ -54,79 +99,4 @@
  
 
 
-    
-   // let cp = prompt("ingrese su código postal: "); 
-
-   // while (cp == "" ||  isNaN(cp)) {
-    //cp = prompt("vuelva a ingresar su código postal");
-//}
-    
-
-
-
-
-
-  
-   /* if (nombre == "" || nombre == null) {
-        let nombre = prompt("ingrese un nombre para continuar: ");
-    }
-    let  apellido = prompt ("ingrese su apellido: "); 
-     
-    if (apellido =="" || apellido == null) {  
-        let apellido = prompt("ingrese un apellido para continuar: ");
-
-    }
-
-    let ciudad = prompt ("Ingrese su Ciudad de localización: ");
-
-    if (ciudad =="" || ciudad == null) {  
-        let ciudad = prompt("ingrese una ciudad para continuar: ");
-
-    }
-
-    let provincia = prompt ("Estado o Provincia al que pertenece: ");
-
-    if (provincia =="" || provincia == null) {  
-        let provincia = prompt("ingrese una provincia para continuar: ");
-
-    }
-    
-    let cp = prompt ("ingrese su código postal: ");
-
-     
-/* acá me gustaria agregar la condicion si cp es vacio o algo que no sea un número, ingresar un dato válido numerico*/
-    /*if (cp =="" || cp == null || isNaN(cp) ) {  
-        let cp = prompt("ingrese una cp valido para continuar: ");
-
-    }
-    
-    let consulta = prompt ("deje su consulta: ");
-
-    if (consulta ==""  || consulta == null) {  
-        let consulta = prompt("¿está seguro que no desea realizar una consulta?: 1-si 2-no.");
-
-        if (consulta = no) {
-            let consulta = prompt ("deje su consulta: ");
-           
-
-        }
-        if (consulta = si)  {
-            let email = prompt ("ingrese su Email: ");
-
-        }
-        
-
-    }
-    
-
-
- alert ("gracias " + nombre + " " + apellido + " su solicitud ha sido enviada, será contactado al Email ingresado.")
-  
- 
- break;
-
-    
-//} */
-
-//}
-
+   
