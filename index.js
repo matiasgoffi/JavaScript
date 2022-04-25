@@ -1,9 +1,8 @@
-let nombre = 0;
-let apellido = 0;
-let ciudad = 0;
-let provincia = 0;
+let nombre
+let apellido 
+let provincia 
 let zip = 0;
-let email = 0;
+let email 
 let respuesta = 0; 
 let preciodelservicio = 0;
 
