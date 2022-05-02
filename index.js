@@ -1,85 +1,48 @@
-let nombre
-let apellido 
-let provincia 
-let zip = 0;
-let email 
-let respuesta = 0; 
-let preciodelservicio = 0;
-
-
-
-
-
-function servicioContratado() {
-    servicio = prompt("seleccioná la opcion deseada: a-(eventos) / b-(sesionindividual)");
-
-    if (servicio == "a") {
-        servicio = 10000;
+/*array creado para almacenar las consuiltas reralizadas, objeto con funcion constructora, que incluye una impresión por consola.*/
+const consultas = [];
+class consultante {
+ constructor (nombre, apellido, ciudad, provincia, zip, email) {
+    this.nombre = nombre.toLowerCase();
+    this. apellido = apellido.toLowerCase();
+    this.ciudad = ciudad.toLowerCase();
+    this.zip = parseFloat(zip);
+    this.provincia = provincia.toLowerCase();
+    this.email = email;
+ }
+   
+    saludar () {
+        console.log("bienvenidx " + this.nombre + " gracias por su consulta la enviaremos al correo ingresado");
     }
-    else if (servicio == "b") {
-        servicio = 5000;
-    } 
-
-    dia = prompt ("seleccioná el dia: a-(lunes) / b-(martes) / c-(miercoles) / d-(jueves)/ e-(viernes) / f-(sabado) / g-(domingo)");
-    
-    if (dia =="a" || dia == "b" || dia == "c" || dia == "d") {
-        dia = 1;
-    }
-    else if (dia == "e" || dia == "f" || dia == "g") {
-        dia = 2;
-
-    }
-    if ( dia !="a" || dia !="b" || dia !="c" || dia !="e" || dia !="f" || dia !="g") {
-        dia = prompt ("seleccione entre (a-b-c-d-e-f- o g) para seguir: a-(lunes) / b-(martes) / c-(miercoles) / d-(jueves)/ e-(viernes) / f-(sabado) / g-(domingo)");
-    }
-    preciodelservicio = servicio * dia;
+  
 
 }
 
 
-function datosPersona() {
-            
-       nombre = prompt("ingrese su Nombre: ");
-        
-       while (nombre == "" || nombre == null){
-        nombre = prompt("ingrese su nombre para continuar: ");
-       }
-       
-        
-        apellido = prompt("ingrese su apellido: ");
-        ciudad = prompt ("Ingrese su Ciudad de localización: ");
-        provincia = prompt ("Estado o Provincia al que pertenece: ");
-        
-        
-        zip = prompt("ingrese su código postal: ");
-        
-        while (zip == "" ||  isNaN(zip) || zip == null){
-        zip = prompt("ingrese su código postal: ");
-        }
-        
-      email = prompt ("ingrese su correo electrónico: "); 
+const consultante1 = new consultante (
+    prompt("ingrese su nombre: "), 
+    prompt("ingrese su apellido:"), 
+    prompt("ingrese su ciudad:"), 
+    prompt("ingrese su provincia:"), 
+    prompt("ingrese su codigo postal:"), 
+    prompt("ingrese su email:"),   
+);
 
-        while (email == "" || email == null) {
-        email = prompt("ingrese su email para continuar: ");
-        }
+consultante1.saludar();
 
-       }
 
-       function mostrar(){
+console.log (consultas);
 
-       respuesta = alert("bienvenidx " + " " + nombre + " " + apellido + " " + "el presupuesto solicitado es de: $" + preciodelservicio + ",enviamos su consulta al email ingresado");
+consultas.push (consultante1);
 
-       }
-    
-   
-datosPersona();      
-servicioContratado();  
-mostrar();
 
-   
 
-     
-      
+
+
+
+
+
+
+
 
 
 
