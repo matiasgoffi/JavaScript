@@ -45,17 +45,16 @@ let precios = [{servicio: "evento", dia: "lunes", precio: 2500},
     constructor (persona) {
         this.nombre = persona.nombre.toLowerCase();
         this. apellido = persona.apellido.toLowerCase();
-        this.ciudad = persona.ciudad.toLowerCase();
+        this.pais = persona.pais.toLowerCase();
         this.zip = parseFloat(persona.zip);
-         this.provincia = persona.provincia.toLowerCase();
-         this.email = persona.email;
+       this.email = persona.email;
     }
 }
 
 /*funcion que me permite solicitar una consulta, ingresando datos por prompt */
 function solicitarConsulta () {
-    let nueva_consulta = new consultante ({nombre:prompt("ingrese su nombre: "), apellido:prompt("ingrese su apellido:"), ciudad:prompt("ingrese su ciudad:"), 
-    provincia: prompt("ingrese su provincia:"), zip:prompt("ingrese su codigo postal:"),  email:prompt("ingrese su email:")});
+    let nueva_consulta = new consultante ({nombre:prompt("ingrese su nombre: "), apellido:prompt("ingrese su apellido:"), 
+    pais: prompt("ingrese su pais de origen:"), zip:prompt("ingrese su codigo postal:"),  email:prompt("ingrese su email:")});
 
     
     consultantes.push (nueva_consulta);
@@ -139,6 +138,21 @@ alert(salida);
 solicitarConsulta();
 comprarServicio();
 mostrarCarrito();
+
+solicitarConsulta();
+comprarServicio();
+mostrarCarrito();
+
+/*muestro por consola el largo de los arrays */
+console.log (consultantes.length);
+console.log (servicios_Contratados.length);
+
+
+/*utilizo la sentencia for of para recorrer el array de quienes consultaron y mostrar sus nombres */
+for (const persona of consultantes) {
+    console.log (persona.nombre);
+}
+
 
 
 
