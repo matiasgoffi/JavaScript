@@ -34,23 +34,50 @@ for (const producto of servicios) {
                     
 
                         
+const servicioscloned = [...servicios];
+console.log (servicioscloned);
+
+let posicion5 = servicios [5];
+console.log (posicion5);
+
+
+
+const serviciosJoined = servicios.join('*');
+console.log (serviciosJoined);
+
+
+
+const signoszodiacales = ['aries', 'tauro', 'geminis', 'cancer', 'leo', 'virgo', 'libra', 'escorpio', 'sagitario', 'capricornio', 'acuario', 'piscis'];  
+const signojoined = signoszodiacales.join('*')
+console.log (signojoined);
+
+/*const [aries, tauro, geminis, cancer, leo, virgo, libra, escorpio, sagitario, capricornio, acuario, piscis] = ['aries', 'tauro', 'geminis', 'cancer', 'leo', 'virgo', 'libra', 'escorpio', 'sagitario', 'capricornio', 'acuario', 'piscis'];
+console.log (aries);*/
+
+let aries = signoszodiacales[0];
+console.log(aries);
+
+console.log (signoszodiacales.includes('tauro'));
+
+
+
+let cantidaddesignos = signoszodiacales.length;
+console.log (cantidaddesignos);
+
+let quintosigno = signoszodiacales [5 - 1];
+console.log (quintosigno);
+
+
+
+
+const eventos = servicios.filter ((element) => {
+    return element.nombre === 'evento';
+
+}
+)      
+console.log (eventos);
 
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-     
-         
-    
