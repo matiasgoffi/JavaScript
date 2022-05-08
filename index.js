@@ -1,4 +1,4 @@
-/*clase servicios con función constructora con  los datos del servicio */
+//clase servicios con función constructora con  los datos del servicio 
 class servicios {
     constructor (servicio) {
   this.servicio = servicio.servicio.toLowerCase();
@@ -8,7 +8,7 @@ class servicios {
                                                     
 
 }
-/*funcion para agregar un nuevo servicio al array de precios ingresando los datos por prompt*/
+//funcion para agregar un nuevo servicio al array de precios ingresando los datos por prompt
 function agregarServicio () {
     let nuevo_servicio = new servicios ({servicio:prompt("ingrese el tipo de servicio: "), dia:prompt("ingrese el dia que se encuentra disponible: "), precio:prompt("ingrese el precio: ")})
     
@@ -17,7 +17,7 @@ function agregarServicio () {
 
 }
 
-/*array de objetos que almacena los servicios  */
+//array de objetos que almacena los servicios  
 
 let precios = [{servicio: "evento", dia: "lunes", precio: 2500},
                     {servicio: "sesion Individual", dia: "lunes", precio: 2000},
@@ -39,7 +39,7 @@ let precios = [{servicio: "evento", dia: "lunes", precio: 2500},
                     
                 ];
 
-/*clase con función constructora que rehune los datos necesarios de un posible consultante (persona)*/
+//clase con función constructora que rehune los datos necesarios de un posible consultante (persona)
 
  class consultante {
     constructor (persona) {
@@ -51,7 +51,7 @@ let precios = [{servicio: "evento", dia: "lunes", precio: 2500},
     }
 }
 
-/*funcion que me permite solicitar una consulta, ingresando datos por prompt */
+//funcion que me permite solicitar una consulta, ingresando datos por prompt 
 function solicitarConsulta () {
     let nueva_consulta = new consultante ({nombre:prompt("ingrese su nombre: "), apellido:prompt("ingrese su apellido:"), 
     pais: prompt("ingrese su pais de origen:"), zip:prompt("ingrese su codigo postal:"),  email:prompt("ingrese su email:")});
@@ -62,11 +62,11 @@ function solicitarConsulta () {
 
 }
 
-/*array para guardar las consultas, lo veo últil para utilizar en el proceso más adelante */
+//array para guardar las consultas, lo veo últil para utilizar en el proceso más adelante 
 let consultantes = [];
  
                           
-/*funcion para mostrar los servicios y poder seleccionar el que sea desea comprar */
+//funcion para mostrar los servicios y poder seleccionar el que sea desea comprar 
 function mostrarServicios() {
     let salida = "";
     let i = 1;
@@ -80,7 +80,7 @@ function mostrarServicios() {
 
 }
 
-/*función para comprar uno o más servicios, mostrarlos por consola y  agregarlos a un carrito de compras */
+//función para comprar uno o más servicios, mostrarlos por consola y  agregarlos a un carrito de compras
 
 function comprarServicio () {
     let salir = "";
@@ -102,7 +102,7 @@ function comprarServicio () {
 
 
 
-/*función que agrega la compra efectuada en "comprarServicio () a un carrito de compras." */
+//función que agrega la compra efectuada en "comprarServicio () a un carrito de compras." 
 
 function agregarAlCarrito(servicio) {
     let nuevo_serviciocontratado = new servicios (servicio);
@@ -110,13 +110,13 @@ function agregarAlCarrito(servicio) {
     }
 
 
-/*array que almacena las contrataciones que se han efetuado. */
- 
+//array que almacena las contrataciones que se han efetuado. 
+
  let servicios_Contratados = [];
  
 
 
-/*función para mostrar, a través de un alert, el listado con la compra y el total a pagar */
+//función para mostrar, a través de un alert, el listado con la compra y el total a pagar 
 
 
 function mostrarCarrito (){
@@ -134,7 +134,7 @@ alert(salida);
 }
 
 
-/*simulo la compra de un servicio, cargando mis datos y muestro la compra en un alert */
+//simulo la compra de un servicio, cargando mis datos y muestro la compra en un alert 
 solicitarConsulta();
 comprarServicio();
 mostrarCarrito();
@@ -143,12 +143,12 @@ solicitarConsulta();
 comprarServicio();
 mostrarCarrito();
 
-/*muestro por consola el largo de los arrays */
+//muestro por consola el largo de los arrays 
 console.log (consultantes.length);
 console.log (servicios_Contratados.length);
 
 
-/*utilizo la sentencia for of para recorrer el array de quienes consultaron y mostrar sus nombres */
+//utilizo la sentencia for of para recorrer el array de quienes consultaron y mostrar sus nombres 
 for (const persona of consultantes) {
     console.log (persona.nombre);
 }
