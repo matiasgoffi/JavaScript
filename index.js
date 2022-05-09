@@ -1,5 +1,3 @@
-
-
 //clase servicios con función constructora con  los datos del servicio 
 class servicios {
     constructor (servicio) {
@@ -10,45 +8,55 @@ class servicios {
                                                     
 
 }
-
-
-
-
-//array de objetos que almacena los servicios  
-const servicios = [{nombre: "evento", dia: "hábil", precio: 1500},
-{nombre: "Sesion Individual", dia: "hábil", Precio: 1500},
-{nombre: "evento", dia: "fin de semana", precio: 2500},
-{nombre: "Sesion Individual", dia: "fin de semana", Precio: 2500},          
-{nombre: "evento", dia: "feriado", precio: 3500},
-{nombre: "Sesion Individual", dia: "feriado", Precio: 3500}]; 
-
 //funcion para agregar un nuevo servicio al array de precios ingresando los datos por prompt
 function agregarServicio () {
     let nuevo_servicio = new servicios ({servicio:prompt("ingrese el tipo de servicio: "), dia:prompt("ingrese el dia que se encuentra disponible: "), precio:prompt("ingrese el precio: ")})
     
     precios.push (nuevo_servicio);
 
-//crear elemento con el array servicios, ya incluyendo el contenido del codigo en una card de bootstrap, que tengo volcada en la pagina portfolio.html
-for (const producto of servicios) {
- let card = document.createElement ("div");
- card.innerHTML = ` <div class="container">
- <div class="row">
-   <div class="col-sm-4">
-<div class="card" style="width: 18rem;">
- <img src="..." class="card-img-top" alt="...">
- <div class="card-body">
-   <h5 class="card-title">Card title</h5>
-   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-   <a href="#" class="btn btn-primary">Go somewhere</a>
- </div>
-</div>
-</div>
-</div>
-</div>`;
-                         document.body.appendChild(contenedor);
 
-} 
-}                   
+}
+
+//array de objetos que almacena los servicios  
+
+let precios = [{servicio: "evento", dia: "lunes", precio: 2500},
+                    {servicio: "sesion Individual", dia: "lunes", precio: 2000},
+                    { servicio: "evento", dia: "martes", precio: 2500},
+                    {servicio: "sesion Individual", dia: "martes", precio: 2000},
+                    {servicio: "evento", dia: "miercoles", precio: 2500},
+                    {servicio: "sesion Individual", dia: "miercoles", precio: 2000},
+                    {servicio: "evento", dia: "jueves", precio: 2500},
+                    {servicio: "sesion Individual", dia: "jueves", precio: 2000},
+                    {servicio: "evento", dia: "viernes", precio: 5000},
+                    {servicio: "sesion Individual", dia: "viernes", precio: 4000},
+                    {servicio: "evento", dia: "sabado", precio: 4000},
+                    {servicio: "sesion Individual", dia: "sabado", precio: 4000},
+                    {servicio: "evento", dia: "domingo", precio: 5000},
+                    {servicio: "sesion Individual", dia: "domingo", precio: 4000},
+                    {servicio: "evento", dia: "feriado", precio: 6000},
+                    {servicio: "sesion Individual", dia: "feriado", precio: 4500},                                   
+                
+                    
+                ];
+
+
+    function crearCard (){
+                 for (let producto of precios){
+                    let card = document.createElement("div");
+                    card.innerHTML ='<div class="col-sm-4">
+                    <div class="card" style="width: 18rem;">
+                      <img src="..." class="card-img-top" alt="...">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      </div>
+                    </div>
+                    </div>;'
+
+                }
+}
+
 
 //clase con función constructora que rehune los datos necesarios de un posible consultante (persona)
 
@@ -66,6 +74,11 @@ for (const producto of servicios) {
 function solicitarConsulta () {
     let nueva_consulta = new consultante ({nombre:prompt("ingrese su nombre: "), apellido:prompt("ingrese su apellido:"), 
     pais: prompt("ingrese su pais de origen:"), zip:prompt("ingrese su codigo postal:"),  email:prompt("ingrese su email:")});
+
+    
+    consultantes.push (nueva_consulta);
+
+
 }
 
 //array para guardar las consultas, lo veo últil para utilizar en el proceso más adelante 
@@ -86,7 +99,7 @@ function mostrarServicios() {
 
 }
 
-//función para comprar uno o más servicios, mostrarlos por consola y  agregarlos a un carrito de compras
+//función para comprar uno o más servicios, mostrarlos por consola y  agregarlos a un carrito de compras 
 
 function comprarServicio () {
     let salir = "";
@@ -117,7 +130,7 @@ function agregarAlCarrito(servicio) {
 
 
 //array que almacena las contrataciones que se han efetuado. 
-
+ 
  let servicios_Contratados = [];
  
 
@@ -139,9 +152,51 @@ alert(salida);
     
 }
 
+/*simulo la compra de un servicio, cargando mis datos y muestro la compra en un alert 
+solicitarConsulta();
+comprarServicio();
+mostrarCarrito();
+
+solicitarConsulta();
+comprarServicio();
+mostrarCarrito();
+
+
+
+//muestro por consola el largo de los arrays 
+console.log (consultantes.length);
+console.log (servicios_Contratados.length);
+
+
+//utilizo la sentencia for of para recorrer el array de quienes consultaron y mostrar sus nombres 
+for (const persona of consultantes) {
+    console.log (persona.nombre);
+}
+
+*/
 
 
 
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+         
+    
+ 
+
+    
+ 
