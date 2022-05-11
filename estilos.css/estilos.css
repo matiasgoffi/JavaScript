@@ -139,3 +139,8 @@ align-content: center;
     width: 50%;
 
 }
+
+.imagenPortfolio {
+    height: 300px;
+    width: 300px;
+}
