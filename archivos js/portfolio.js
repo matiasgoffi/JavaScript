@@ -1,3 +1,5 @@
+//array con los servicios ofrecidos organizados en cards
+
 let portfolio = [ 
   {id: 1, servicio:"Event up to 150 people", imagen:"/imagenes/casamiento.jpg", descripcion:"wedding coverage." }, 
   {id: 2, servicio: "Event up to 50 people", imagen:"/imagenes/eventoLaboral.jpg", descripcion:"A work Party."},
@@ -8,40 +10,71 @@ let portfolio = [
 ];
 
 
+//funcion para buscar el servicio por id 
+function buscarServicio (id) {
+  let portfolio = traerPortfolioLS();
+  return portfolio.find (x => x.id == id); 
 
-//creando a través del dom una etiqueta div con el elemento Card para volcar luego mi array con cada uno de los servicios ofrecidos
+}
 
+//funcion para agregar al carrito
+
+function agregaralCarrito (id) {
+  let servicio = buscarServicio(id);
+  let servicios_carrito = traerPortfolioCarrito();
+  servicios_carrito.push(servicio);
+  localStorage.setItem ("carrito", JSON.stringify(servicios_carrito) );
+}
+
+
+function traerPortfolioCarrito() {
+  if (localStorage.getItem("carrito")) {
+  return JSON.parse (localStorage.getItem ("carrito"));
+}
+   return [];
+}
+
+//funcion para elminar carrito 
+function eliminarCarrito() {
+  localStorage.removeItem("carrito");
+}
+
+
+
+//funcion para guardar datos del local storage
+function guardarPortfolioLS (portfolio) {
+  localStorage.setItem ("portfolio", JSON.stringify(portfolio));
+}
+
+function traerPortfolioLS () {
+  return JSON.parse(localStorage.getItem("portfolio")); 
+}
+
+//creando a través del dom una etiqueta div con el elemento Card para cada uno de mis servicios, con un evento onclick para agregar al carrito de comprar.
+function crearTarjetaDeServicio() {
+
+let portfolio1 = traerPortfolioLS();
+
+for (const servicio of portfolio1) {
 let div = document.getElementById ("container");
-portfolio.forEach((servicio) => {
-  let Card = document.createElement ("div");
+
+let Card = document.createElement ("div");
 Card.classList.add("card", "text-white", "bg-dark","col-sm-12", "col-md-6", "col-lg-4");
 Card.innerHTML= `
 <img src="${servicio.imagen}" class="card-img-top  imagenPortfolio" alt="...">
 <div class="card-body">
   <h5 class="card-title">${servicio.servicio}</h5>
   <p class="card-text">${servicio.descripcion}</p>
-  <a href="#" id="btnHire" class="btn btn-primary">Hire Service</a>
+  <a href="#" id="btnHire" class="btn btn-primary" onclick="agregaralCarrito(${servicio.id});">Hire Service</a>
 </div>`;
 div.appendChild(Card);
+};
 
 
-});
-
-//creo carrito donde almaceno los servicios contratados
-
-let ServiciosContratados = [];
-
-
-
-let botonHire = document.getElementById ("btnHire");
-
-botonHire.onclick = () =>{
-  ServiciosContratados.push();
-  console.log (ServiciosContratados.length);
-  alert("servicio contratado!");
 }
 
- 
 
+guardarPortfolioLS(portfolio);
+crearTarjetaDeServicio(); 
 
-
+document.getElementById("eliminar_carrito").addEventListener("click", eliminarCarrito);
