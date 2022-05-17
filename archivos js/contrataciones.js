@@ -53,11 +53,7 @@ const carrito = [];
 function agregaralCarrito (id) {
   let servicio = buscarServicio(id);
   let servicios_carrito = traerservicioscarrito();
-  let servicioencontrado = 
-  if ( servicioencontrado = carrito.prototype.includes(servicio.id)) {
-      
-  };
-  
+ 
   servicios_carrito.push(servicio);
   localStorage.setItem ("carrito", JSON.stringify(servicios_carrito) );
 }
